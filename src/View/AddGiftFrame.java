@@ -5,7 +5,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.JComboBox;
-import java.awt.*;
+
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
@@ -17,11 +17,10 @@ public class AddGiftFrame extends JFrame {
     private JLabel nameLB;
     private JTextField name_TextField;
     private JLabel gift_Label;
-    private JLabel linkMusic_Label;
-    private JComboBox gift_typeComboBox;
 
-    private JTextField filePathField;
-    private JButton browseButton;
+    @SuppressWarnings("rawtypes")
+    private JComboBox gift_typeComboBox; 
+
     private JPanel fileListPanel;
     private JButton addFileButton;
 
@@ -33,13 +32,13 @@ public class AddGiftFrame extends JFrame {
         panelAddGift = new JPanel();
         profileNameLB = new JLabel("Profile");
         add(profileNameLB);
-        profile_JTextField = new JTextField("Demo profile", 30);
+        profile_JTextField = new JTextField("Demo profile", 35);
         add(profile_JTextField);
         panelAddGift.add(profileNameLB);
         panelAddGift.add(profile_JTextField);
         nameLB = new JLabel("Tên hiển thị");
         panelAddGift.add(nameLB);
-        name_TextField = new JTextField(30);
+        name_TextField = new JTextField(35);
         panelAddGift.add(name_TextField);
         String city[] = { "BingChiling", "Potato", "Okay" };
         gift_Label = new JLabel("Chọn quà");
