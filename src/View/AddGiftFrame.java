@@ -6,6 +6,8 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.JComboBox;
 
+import java.awt.BorderLayout;
+import java.awt.Dimension;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
@@ -19,7 +21,7 @@ public class AddGiftFrame extends JFrame {
     private JLabel gift_Label;
 
     @SuppressWarnings("rawtypes")
-    private JComboBox gift_typeComboBox; 
+    private JComboBox gift_typeComboBox;
 
     private JPanel fileListPanel;
     private JButton addFileButton;
@@ -29,30 +31,39 @@ public class AddGiftFrame extends JFrame {
         setSize(450, 600);
         setLocationRelativeTo(null);
 
+        // tao panel chinh va thiet lap layout
         panelAddGift = new JPanel();
+        panelAddGift.setLayout(new BoxLayout(panelAddGift, BoxLayout.Y_AXIS));
+        panelAddGift.setBorder(BorderFactory.createEmptyBorder(20, 20, 20, 20)); // Thêm khoảng cách xung quanh
+
+        // tao nhan profile va textfield
         profileNameLB = new JLabel("Profile");
-        add(profileNameLB);
-        profile_JTextField = new JTextField("Demo profile", 35);
-        add(profile_JTextField);
+        profile_JTextField = new JTextField("Demo profile", 20);
+
+        //Tao label va textfield ten hien thi cua qua
+        nameLB = new JLabel("Tên hiển thị");
+        name_TextField = new JTextField(20);
+
+        //Them cac thanh phan vao panel
         panelAddGift.add(profileNameLB);
         panelAddGift.add(profile_JTextField);
-        nameLB = new JLabel("Tên hiển thị");
+        panelAddGift.add(Box.createRigidArea(new Dimension(0, 10)));
         panelAddGift.add(nameLB);
-        name_TextField = new JTextField(35);
         panelAddGift.add(name_TextField);
+        
         String city[] = { "BingChiling", "Potato", "Okay" };
         gift_Label = new JLabel("Chọn quà");
         panelAddGift.add(gift_Label);
         gift_typeComboBox = new JComboBox<>(city);
         panelAddGift.add(gift_typeComboBox);
 
-        // Tạo một JPanel để hiển thị danh sách các tập tin
+        // Tao panel hien thi cac tap tin
         fileListPanel = new JPanel();
         fileListPanel.setLayout(new BoxLayout(fileListPanel, BoxLayout.Y_AXIS));
         panelAddGift.add(new JLabel("Danh sách tập tin:"));
         panelAddGift.add(fileListPanel);
 
-        // Tạo nút để thêm tập tin
+        // Tao nut them tap tin
         addFileButton = new JButton("Thêm tập tin +");
         addFileButton.addActionListener(new ActionListener() {
             @Override
@@ -71,8 +82,8 @@ public class AddGiftFrame extends JFrame {
                 }
             }
         });
-        panelAddGift.add(addFileButton);
 
+        panelAddGift.add(addFileButton);
         add(panelAddGift);
     }
 
