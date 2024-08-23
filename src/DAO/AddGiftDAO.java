@@ -32,17 +32,16 @@ public class AddGiftDAO {
         try (Connection conn = DatabaseConnector.connect();
              PreparedStatement pstmt = conn.prepareStatement(sql)) {
             
-            pstmt.setInt(1, id); // Gán giá trị id vào tham số đầu tiên (?)
-            
+            pstmt.setInt(1, id);             
             try (ResultSet rs = pstmt.executeQuery()) {
-                if (rs.next()) { // Di chuyển con trỏ đến bản ghi đầu tiên
-                    giftName = rs.getString("gift_name"); // Lấy giá trị của cột "gift_name"
+                if (rs.next()) { 
+                    giftName = rs.getString("gift_name"); 
                 }
             }
         } catch (Exception e) {
             e.printStackTrace();
         }
         
-        return giftName; // Trả về giá trị của cột "gift_name"
+        return giftName; 
     }
 }

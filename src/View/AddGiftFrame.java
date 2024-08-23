@@ -34,11 +34,11 @@ public class AddGiftFrame extends JFrame {
         setSize(450, 600);
         setLocationRelativeTo(null);
 
-        filePaths = new ArrayList<>(); // Khởi tạo danh sách lưu các file paths
+        filePaths = new ArrayList<>(); // init list to save file paths
         // tao panel chinh va thiet lap layout
         panelAddGift = new JPanel();
         panelAddGift.setLayout(new BoxLayout(panelAddGift, BoxLayout.Y_AXIS));
-        panelAddGift.setBorder(BorderFactory.createEmptyBorder(20, 20, 20, 20)); // Thêm khoảng cách xung quanh
+        panelAddGift.setBorder(BorderFactory.createEmptyBorder(20, 20, 20, 20));
 
         // tao nhan profile va textfield
         profileNameLB = new JLabel("Profile");
