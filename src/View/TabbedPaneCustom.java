@@ -3,11 +3,11 @@ package View;
 import javax.swing.JTabbedPane;
 
 public class TabbedPaneCustom extends JTabbedPane{
-    private ProfilePanel profile1;
-    private ProfilePanel profile2;
+    private GiftFrame profile1;
+    private GiftFrame profile2;
     public TabbedPaneCustom(){
-        profile1 = new ProfilePanel();
-        profile2 = new ProfilePanel();
+        profile1 = new GiftFrame();
+        profile2 = new GiftFrame();
 
         add(profile1);
         add(profile2);
